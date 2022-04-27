@@ -38,7 +38,7 @@ trim_trailing_whitespace = false
 
 ### 配置 eslint、prettier
 ```
-pnpm i eslint prettier eslint-config-prettier eslint-plugin-prettier eslint-plugin-vue @typescript-eslint/parser @typescript-eslint/eslint-plugin -D
+pnpm i eslint prettier eslint-config-prettier eslint-plugin-prettier eslint-plugin-vue @typescript-eslint/parser @typescript-eslint/eslint-plugin vue-global-api -D
 ```
 
 - 在根目录下建立 eslint 配置文件： .eslintrc.js
