@@ -165,3 +165,78 @@ npm run lint
 ```
 
 注意：由于我们使用的是pnpm，在执行npx mrm@2 lint-staged的时候，使用的是npm去安装依赖，而且在package.json中没有相关的版本记录，我的解决方法是再使用pnpm i husky lint-staged -D安装一次
+
+## 第三方库集成
+
+### 路由 vue-router
+
+安装依赖
+
+```
+pnpm install vue-router@4
+```
+
+src 目录创建 router/index.ts
+
+```ts
+import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
+import Login from '/@/views/login.vue'
+const routes: Array<RouteRecordRaw> = [
+  {
+    path: '/login',
+    component: Login
+  }
+]
+
+const router = createRouter({
+  history: createWebHashHistory(),
+  routes
+})
+
+export default router
+```
+
+在 main.ts 中注册路由
+
+```ts
+import { createApp } from 'vue'
+import router from './router'
+import App from './App.vue'
+
+const app = createApp(App)
+app.use(router).mount('#app')
+```
+
+App.vue 中使用路由占位符
+
+```html
+<router-view v-slot="{ Component }">
+  <keep-alive>
+    <component :is="Component" />
+  </keep-alive>
+</router-view>
+```
+
+### 状态管理 pinia
+
+```shell
+pnpm install pinia
+```
+
+src 目录创建 store/index.ts
+
+```ts
+import { App } from 'vue'
+import { createPinia } from 'pinia'
+
+export const setupStore = (app: App) => {
+  app.use(createPinia())
+}
+```
+
+在 main.ts 中注册
+
+```ts
+import { setupStore } from './store'
+setupStore(app)
+```
