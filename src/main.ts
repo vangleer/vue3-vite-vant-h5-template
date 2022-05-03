@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
+import 'amfe-flexible'
 import { setupStore } from './store'
 import { setupVant } from './plugins/vant'
 import router from './router'
