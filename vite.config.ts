@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import styleImport, { VantResolve } from 'vite-plugin-style-import'
 import { resolve } from 'path'
 // 路径查找
 const pathResolve = (dir: string): string => {
@@ -15,5 +16,10 @@ const alias: Record<string, string> = {
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve: { alias },
-  plugins: [vue()]
+  plugins: [
+    vue(),
+    styleImport({
+      resolves: [VantResolve()]
+    })
+  ]
 })

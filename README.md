@@ -240,3 +240,50 @@ export const setupStore = (app: App) => {
 import { setupStore } from './store'
 setupStore(app)
 ```
+
+### 引入Vant 推荐[官方文档](https://vant-contrib.gitee.io/vant/#/zh-CN/quickstart)
+```
+pnpm add vant
+```
+1. 在 vite 项目中按需引入组件（推荐）
+```
+pnpm add vite-plugin-style-import@1.4.1 -D
+```
+2. 配置插件 安装完成后，在 vite.config.ts 文件中配置插件：
+```ts
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import styleImport, { VantResolve } from 'vite-plugin-style-import'
+import { resolve } from 'path'
+// 路径查找
+const pathResolve = (dir: string): string => {
+  return resolve(__dirname, '.', dir)
+}
+
+// 设置别名
+const alias: Record<string, string> = {
+  '/@': pathResolve('src'),
+  '@': pathResolve('src'),
+  '@build': pathResolve('build')
+}
+// https://vitejs.dev/config/
+export default defineConfig({
+  resolve: { alias },
+  plugins: [
+    vue(),
+    styleImport({
+      resolves: [VantResolve()]
+    })
+  ]
+})
+
+```
+
+引入组件 完成以上两步，就可以直接使用 Vant 组件了：
+```ts
+import { createApp } from 'vue'
+import { Button } from 'vant'
+
+const app = createApp()
+app.use(Button)
+```
