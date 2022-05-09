@@ -1,7 +1,7 @@
 import { App } from 'vue'
-import { Button } from 'vant'
+import { Button, NavBar, Tabbar, TabbarItem } from 'vant'
 
-const components = [Button]
+const components = [Button, NavBar, Tabbar, TabbarItem]
 
 export const setupVant = (app: App) => {
   components.forEach((component) => {
