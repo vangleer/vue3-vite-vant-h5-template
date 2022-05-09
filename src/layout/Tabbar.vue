@@ -10,8 +10,6 @@
 
 <script setup lang="ts">
 import { tabbar } from '/@/router'
-import { ref } from 'vue'
-const active = ref(1)
 </script>
 
 <style lang="scss" scoped></style>
