@@ -106,10 +106,10 @@ function handleLogin() {
       width: 100%;
       height: 50px;
       border-bottom: 1px solid #eee;
-		  padding: 0px 5px;
+      padding: 0px 5px;
       font-size: 16px;
       &::-webkit-input-placeholder {
-        color: #C0C0C0;
+        color: #c0c0c0;
       }
     }
   }
