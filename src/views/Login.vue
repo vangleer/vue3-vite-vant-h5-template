@@ -54,7 +54,7 @@ function handleLogin() {
 
   Toast('登录成功')
 
-  localStorage.setItem('user', JSON.stringfy(user))
+  localStorage.setItem('token', JSON.stringify(user))
   router.replace('/')
 }
 </script>

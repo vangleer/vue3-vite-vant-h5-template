@@ -31,21 +31,18 @@ export default defineConfig({
       symbolId: 'icon-[dir]-[name]'
     })
   ],
-  // css: {
-  //   // https://github.com/vitejs/vite/issues/5833
-  //   postcss: {
-  //     plugins: [
-  //       {
-  //         postcssPlugin: 'internal:charset-removal',
-  //         AtRule: {
-  //           charset: atRule => {
-  //             if (atRule.name === 'charset') {
-  //               atRule.remove()
-  //             }
-  //           }
-  //         }
-  //       }
-  //     ]
-  //   }
-  // }
+  server: {
+    // 是否开启 https
+    https: false,
+    // 端口号
+    port: 3002,
+    host: '0.0.0.0',
+    // 本地跨域代理
+    proxy: {
+      '/api/v1': {
+        target: 'http://192.168.1.25:8081',
+        changeOrigin: true,
+      }
+    }
+  }
 })
