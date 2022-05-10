@@ -37,6 +37,7 @@ import { Toast } from 'vant'
 import SvgIcon from '/@/components/SvgIcon.vue'
 import NavBar from '/@/layout/NavBar.vue'
 import { useRouter } from 'vue-router'
+import { setToken } from '/@/utils/auth'
 
 const router = useRouter()
 const user = reactive({
@@ -48,13 +49,14 @@ function handleOpt(type: string) {
   Toast(type === 'forgot' ? '忘记密码/解绑' : '注册')
 }
 
-function handleLogin() {
+async function handleLogin() {
   if (!user.username.trim()) return Toast('请输入用户名！')
   if (!user.password.trim()) return Toast('请输入密码！')
 
   Toast('登录成功')
 
-  localStorage.setItem('token', JSON.stringify(user))
+  const token = 'T-APP-TOKEN'
+  setToken(token)
   router.replace('/')
 }
 </script>
