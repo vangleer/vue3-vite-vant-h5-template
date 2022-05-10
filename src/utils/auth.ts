@@ -6,7 +6,6 @@ export function getToken() {
   return Cookies.get(TOKEN_KEY)
 }
 
-
 export function setToken(token: string) {
   Cookies.set(TOKEN_KEY, token)
   useAppStore().setState({ token })

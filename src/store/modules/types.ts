@@ -1,4 +1,4 @@
 export type appType = {
-  title?: string,
+  title?: string
   token?: string
 }

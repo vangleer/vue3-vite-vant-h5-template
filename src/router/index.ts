@@ -57,7 +57,7 @@ router.beforeEach((to, from, next) => {
   if (to.path === '/login' || whiteList.includes(to.path)) {
     next()
   } else {
-    const title = to.meta.title as string || 'Vite App'
+    const title = (to.meta.title as string) || 'Vite App'
     const token = getToken()
     const store = useAppStore()
     document.title = title
