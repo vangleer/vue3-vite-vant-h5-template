@@ -1,18 +1,15 @@
 <template>
-<van-config-provider theme="light">
-  <div class="t-container">
-    <router-view v-slot="{ Component }">
-      <keep-alive>
-        <component :is="Component" />
-      </keep-alive>
-    </router-view>
-  </div>
-</van-config-provider>
-  
+  <van-config-provider theme="light">
+    <div class="t-container">
+      <router-view v-slot="{ Component }">
+        <keep-alive>
+          <component :is="Component" />
+        </keep-alive>
+      </router-view>
+    </div>
+  </van-config-provider>
 </template>
 
-<script setup lang="ts">
-import {  } from 'vant'
-</script>
+<script setup lang="ts"></script>
 
 <style></style>
