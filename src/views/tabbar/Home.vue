@@ -8,7 +8,12 @@
     <div class="t-tip" @click="handleOpen">{{ t('username') }}</div>
 
     <div class="t-list">
-      <div v-for="item in list" :key="item.title" class="t-list-item" @click="handleItemClick(item)">
+      <div
+        v-for="item in list"
+        :key="item.title"
+        class="t-list-item"
+        @click="handleItemClick(item)"
+      >
         <span>{{ item.title }}</span>
         <span><van-icon name="arrow" /></span>
       </div>
