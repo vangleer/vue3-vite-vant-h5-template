@@ -16,8 +16,9 @@ const alias: Record<string, string> = {
   '@build': pathResolve('build')
 }
 // https://vitejs.dev/config/
-export default defineConfig({
+export default ({ mode }) => defineConfig({
   resolve: { alias },
+  base: mode === 'production' ? '/vue3-vite-vant-h5-template/' : '/',
   plugins: [
     vue(),
     styleImport({
@@ -46,3 +47,4 @@ export default defineConfig({
     }
   }
 })
+

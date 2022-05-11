@@ -2,6 +2,7 @@
   "name": "vue3-vite-vant-h5-template",
   "private": true,
   "version": "0.1.0",
+  "homepage": "https://java0088.github.io/vue3-vite-vant-h5-template",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
