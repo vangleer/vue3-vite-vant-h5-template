@@ -2,10 +2,12 @@
 .van-theme-light {
   --default-color: #272e2d;
   --van-blue: #12C8B9;
+  --common-background-color: var(--van-background);
 }
 
 /* 黑色主题 */
 .van-theme-dark {
   background-color: #000;
   color: var(--van-text-color);
+  --common-background-color: var(--van-background-3);
 }

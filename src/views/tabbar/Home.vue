@@ -5,11 +5,31 @@
       <span>vue3-vite-vant-h5-template</span>
     </h1>
     <div class="t-tip">Vue3移动端开发模板</div>
+
+    <div class="t-list">
+      <div
+        v-for="item in list"
+        :key="item.title"
+        class="t-list-item"
+      >
+         <span>{{ item.title }}</span>
+         <span><van-icon name="arrow" /></span>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
 import SvgIcon from '/@/components/SvgIcon.vue'
+
+const list = ref([
+  { title: '主题切换', key: 'theme' },
+  { title: '国际化', key: 'i18n' },
+  { title: 'rem移动端适配方案', key: 'rem' },
+  { title: 'axios二次封装', key: 'axios' },
+  { title: 'pinia状态管理', key: 'pinia' }
+])
 </script>
 
 <style lang="scss" scoped>
@@ -29,6 +49,21 @@ import SvgIcon from '/@/components/SvgIcon.vue'
     margin: 0 0 40px;
     color: var(--van-text-color-2);
     font-size: 14px;
+  }
+
+  .t-list {
+    &-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 40px;
+      border-radius: 20px;
+      background-color: var(--common-background-color);
+      padding: 0 20px;
+      cursor: pointer;
+      margin-bottom: 14px;
+    }
   }
 }
 </style>

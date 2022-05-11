@@ -1,4 +1,5 @@
 <template>
+  <van-button @click="handleChangeTheme">切换主题</van-button>
   <van-config-provider :theme="theme">
     <div class="t-container">
       <router-view v-slot="{ Component }">
@@ -23,4 +24,6 @@ onMounted(() => {
 })
 </script>
 
-<style></style>
+<style>
+
+</style>
