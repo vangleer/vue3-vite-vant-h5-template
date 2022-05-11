@@ -8,10 +8,10 @@ jobs:
     runs-on: ubuntu-latest # 我们选择使用最新的ubuntu系统
     steps:
     - name: Checkout
-      uses: actions/checkout@master # 将代码拷贝到虚机中
+      uses: actions/checkout@main # 将代码拷贝到虚机中
  
     - name: Build and Deploy
-      uses: JamesIves/github-pages-deploy-action@master # 构建和部署，使用的 action 是JamesIves/github-pages-deploy-action。
+      uses: JamesIves/github-pages-deploy-action@main # 构建和部署，使用的 action 是JamesIves/github-pages-deploy-action。
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }} # 使用环境变量
         BRANCH: gh-pages # 存放产物的分支名称
