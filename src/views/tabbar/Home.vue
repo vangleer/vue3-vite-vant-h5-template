@@ -27,7 +27,7 @@ import SvgIcon from '/@/components/SvgIcon.vue'
   }
   .t-tip {
     margin: 0 0 40px;
-    color: #969799;
+    color: var(--van-text-color-2);
     font-size: 14px;
   }
 }

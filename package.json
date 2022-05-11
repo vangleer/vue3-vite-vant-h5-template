@@ -17,7 +17,7 @@
     "js-cookie": "^3.0.1",
     "pinia": "^2.0.13",
     "qs": "^6.10.3",
-    "vant": "^3.4.9",
+    "vant": "4.0.0-alpha.0",
     "vite-svg-loader": "^3.3.0",
     "vue": "^3.2.25",
     "vue-router": "4"

@@ -7,6 +7,8 @@
 - 支持国际化
 - 项目使用 pnpm 包管理工具，用法和 npm 没有什么区别，官方地址：https://www.pnpm.cn/
 
+[项目预览](https://java0088.github.io/vue3-vite-vant-h5-template/#/home)
+
 ## 项目搭建
 - 参考vite官网：https://vitejs.cn
 

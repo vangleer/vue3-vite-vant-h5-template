@@ -17,7 +17,7 @@
       </div>
       <div class="t-form-item">
         <div class="t-form-label">
-          <SvgIcon class="t-form-label-icon" name="password" />
+          <SvgIcon class="t-form-label-icon" name="password" color="var(--van-text-color)" />
           <span>密码</span>
         </div>
         <input v-model="user.password" placeholder="请输入密码" />
@@ -110,6 +110,7 @@ async function handleLogin() {
       border-bottom: 1px solid #eee;
       padding: 0px 5px;
       font-size: 16px;
+      background-color: transparent;
       &::-webkit-input-placeholder {
         color: #c0c0c0;
       }
