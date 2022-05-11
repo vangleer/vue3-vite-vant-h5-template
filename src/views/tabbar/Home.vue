@@ -5,15 +5,12 @@
       <span>vue3-vite-vant-h5-template</span>
     </h1>
     <div class="t-tip">Vue3移动端开发模板</div>
+    <div class="t-tip" @click="handleOpen">{{ t('username') }}</div>
 
     <div class="t-list">
-      <div
-        v-for="item in list"
-        :key="item.title"
-        class="t-list-item"
-      >
-         <span>{{ item.title }}</span>
-         <span><van-icon name="arrow" /></span>
+      <div v-for="item in list" :key="item.title" class="t-list-item" @click="handleItemClick(item)">
+        <span>{{ item.title }}</span>
+        <span><van-icon name="arrow" /></span>
       </div>
     </div>
   </div>
@@ -21,8 +18,9 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import { t, changeLocale } from '/@/plugins/i18n'
 import SvgIcon from '/@/components/SvgIcon.vue'
-
+import { Dialog } from 'vant'
 const list = ref([
   { title: '主题切换', key: 'theme' },
   { title: '国际化', key: 'i18n' },
@@ -30,6 +28,15 @@ const list = ref([
   { title: 'axios二次封装', key: 'axios' },
   { title: 'pinia状态管理', key: 'pinia' }
 ])
+
+function handleItemClick(item: any) {
+  console.log('啦啦啦啦', item)
+  changeLocale()
+}
+
+function handleOpen() {
+  Dialog({ message: '提示' })
+}
 </script>
 
 <style lang="scss" scoped>

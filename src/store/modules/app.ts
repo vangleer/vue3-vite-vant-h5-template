@@ -1,15 +1,16 @@
 import { defineStore } from 'pinia'
-import { appType } from './types'
 export const useAppStore = defineStore({
   id: 't-app',
-  state: (): appType => ({
+  state: (): any => ({
     title: '',
-    token: ''
+    token: '',
+    theme: 'light',
+    locale: 'en-US'
   }),
   actions: {
-    setState(state: appType) {
+    setState(state: any) {
       const keys: any = Object.keys(state)
-      keys.forEach((key: keyof appType) => {
+      keys.forEach((key: any) => {
         this[key] = state[key]
       })
     }
