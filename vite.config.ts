@@ -3,7 +3,6 @@ import vue from '@vitejs/plugin-vue'
 import svgLoader from 'vite-svg-loader'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import styleImport, { VantResolve } from 'vite-plugin-style-import'
-import VueI18n from '@intlify/vite-plugin-vue-i18n'
 import { resolve } from 'path'
 // 路径查找
 const pathResolve = (dir: string): string => {
@@ -31,11 +30,6 @@ export default ({ mode }) => defineConfig({
       iconDirs: [pathResolve('src/assets/svg')],
       // 指定symbolId格式
       symbolId: 'icon-[dir]-[name]'
-    }),
-    VueI18n({
-      runtimeOnly: true,
-      compositionOnly: true,
-      include: [resolve('src/config/locales/**')]
     })
   ],
   server: {
