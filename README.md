@@ -13,11 +13,11 @@
 
 [在线预览](https://java0088.github.io/vue3-vite-vant-h5-template/#/home)
 
-<p align="center">
-  <img alt="Login" width="100%" src="https://java0088.github.io/vue3-vite-vant-h5-template/assets/images/login.png">
-  <img alt="Home" width="100%" src="https://java0088.github.io/vue3-vite-vant-h5-template/assets/images/home.png">
-  <img alt="Theme" width="100%" src="https://java0088.github.io/vue3-vite-vant-h5-template/assets/images/theme.png">
-  <img alt="I18n" width="100%" src="https://java0088.github.io/vue3-vite-vant-h5-template/assets/images/i18n.png">
+<p align="center"> 
+  <img alt="Login" src="https://java0088.github.io/vue3-vite-vant-h5-template/assets/images/login.png">
+  <img alt="Home" src="https://java0088.github.io/vue3-vite-vant-h5-template/assets/images/home.png">
+  <img alt="Theme" src="https://java0088.github.io/vue3-vite-vant-h5-template/assets/images/theme.png">
+  <img alt="I18n" src="https://java0088.github.io/vue3-vite-vant-h5-template/assets/images/i18n.png">
 </p>
 
 ## 项目搭建
