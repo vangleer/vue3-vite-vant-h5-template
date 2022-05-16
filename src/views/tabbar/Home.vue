@@ -39,17 +39,16 @@ const list = ref([
 
 function handleItemClick(item: any) {
   console.log('啦啦啦啦', item)
-  switch(item.key) {
+  switch (item.key) {
     case 'theme':
       store.changeTheme()
-      break;
+      break
     case 'i18n':
       store.changeLocale()
-      break;
+      break
     default:
       Toast(item.title)
   }
-  
 }
 
 function handleOpen() {

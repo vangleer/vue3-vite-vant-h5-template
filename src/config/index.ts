@@ -1,4 +1,3 @@
-
 export const CONFIG_KEY = 'app-config'
 // 默认配置
 const defaultConfig = {
@@ -12,7 +11,7 @@ export function getConfig() {
 export function setConfig(conf: any) {
   const config = JSON.parse(localStorage.getItem(CONFIG_KEY) || JSON.stringify(defaultConfig))
 
-  Object.keys(conf).forEach(key => {
+  Object.keys(conf).forEach((key) => {
     config[key] = conf[key]
   })
 
