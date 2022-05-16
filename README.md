@@ -9,10 +9,9 @@
 - 支持国际化
 - 项目使用 pnpm 包管理工具，用法和 npm 没有什么区别，官方地址：https://www.pnpm.cn/
 
-## 页面截图
+## 预览
 
-
-[项目在线预览](https://java0088.github.io/vue3-vite-vant-h5-template/#/home)
+[在线预览](https://java0088.github.io/vue3-vite-vant-h5-template/#/home)
 
 <p align="center">
   <img alt="Login" width="100%" src="https://java0088.github.io/vue3-vite-vant-h5-template/assets/images/login.png">
