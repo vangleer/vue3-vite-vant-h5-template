@@ -55,7 +55,7 @@ const router = createRouter({
 const whiteList = ['/login']
 
 router.beforeEach((to, from, next) => {
-  const title = to.meta.title as string || 'Vite App'
+  const title = (to.meta.title as string) || 'Vite App'
   document.title = t(title)
   const token = getToken()
   if (to.path === '/login' || whiteList.includes(to.path)) {
