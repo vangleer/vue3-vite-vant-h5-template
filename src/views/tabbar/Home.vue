@@ -23,9 +23,12 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { t, changeLocale } from '/@/plugins/i18n'
+import { t } from '/@/plugins/i18n'
 import SvgIcon from '/@/components/SvgIcon.vue'
-import { Dialog } from 'vant'
+import { Dialog, Toast } from 'vant'
+import { useAppStore } from '/@/store'
+
+const store = useAppStore()
 const list = ref([
   { title: '主题切换', key: 'theme' },
   { title: '国际化', key: 'i18n' },
@@ -36,7 +39,17 @@ const list = ref([
 
 function handleItemClick(item: any) {
   console.log('啦啦啦啦', item)
-  changeLocale()
+  switch(item.key) {
+    case 'theme':
+      store.changeTheme()
+      break;
+    case 'i18n':
+      store.changeLocale()
+      break;
+    default:
+      Toast(item.title)
+  }
+  
 }
 
 function handleOpen() {

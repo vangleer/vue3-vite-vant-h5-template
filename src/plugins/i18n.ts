@@ -30,10 +30,11 @@ export const t = (key: string) => i18n.global.t(key)
  * 设置语言
  * @param key string | undefined
  */
-export function changeLocale(key?: string) {
+export function changeLocale(key?: 'zh' | 'en') {
   if (!key) {
     key = i18n.global.locale.value === 'zh' ? 'en' : 'zh'
   }
   i18n.global.locale.value = key
   key === 'zh' ? Locale.use('zh-CN', zhLocale) : Locale.use('en-US', enLocale)
+  return key
 }

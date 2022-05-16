@@ -10,8 +10,15 @@ import router from './router'
 import App from './App.vue'
 
 const app = createApp(App)
+
 useI18n(app)
-setupStore(app)
 setupVant(app)
+setupStore(app)
 app.use(router)
-app.mount('#app')
+
+router.isReady().then(() => {
+  app.mount('#app')
+})
+
+
+

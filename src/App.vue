@@ -1,6 +1,5 @@
 <template>
-  <van-button @click="handleChangeTheme">切换主题</van-button>
-  <van-config-provider :theme="theme">
+  <van-config-provider :theme="(store.theme as any)">
     <div class="t-container">
       <router-view v-slot="{ Component }">
         <keep-alive>
@@ -12,15 +11,13 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onMounted } from 'vue'
+import { useAppStore } from './store'
 
-const theme = ref<any>('light')
-function handleChangeTheme() {
-  theme.value = theme.value === 'light' ? 'dark' : 'light'
-}
+const store = useAppStore()
 
 onMounted(() => {
-  document.body.classList.toggle('van-theme-' + theme.value)
+  document.body.classList.toggle('van-theme-' + store.theme)
 })
 </script>
 
