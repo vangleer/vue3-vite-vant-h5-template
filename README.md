@@ -1,5 +1,7 @@
 # vue3-vite-vant-h5-template 最新版vue移动端开发模板
 
+开箱即用的 Vue3 + Vant4 移动端模板
+
 - 使用技术 Vue 3 + TypeScript + Vite + Vant + pinia + vue-router + axios + vuei18n
 - 支持rem移动端适配方案
 - axios二次封装
@@ -7,7 +9,11 @@
 - 支持国际化
 - 项目使用 pnpm 包管理工具，用法和 npm 没有什么区别，官方地址：https://www.pnpm.cn/
 
+## 页面截图
+
+
 [项目在线预览](https://java0088.github.io/vue3-vite-vant-h5-template/#/home)
+
 
 ## 项目搭建
 - 参考vite官网：https://vitejs.cn
