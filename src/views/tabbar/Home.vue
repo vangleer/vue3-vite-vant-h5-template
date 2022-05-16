@@ -4,8 +4,7 @@
       <SvgIcon name="logo" size="1rem" color="var(--van-primary-color)" />
       <span>vue3-vite-vant-h5-template</span>
     </h1>
-    <div class="t-tip">Vue3移动端开发模板</div>
-    <div class="t-tip" @click="handleOpen">{{ t('username') }}</div>
+    <div class="t-tip">{{ t('home.tip') }}</div>
 
     <div class="t-list">
       <div
@@ -14,7 +13,7 @@
         class="t-list-item"
         @click="handleItemClick(item)"
       >
-        <span>{{ item.title }}</span>
+        <span>{{ t(item.title) }}</span>
         <span><van-icon name="arrow" /></span>
       </div>
     </div>
@@ -30,15 +29,14 @@ import { useAppStore } from '/@/store'
 
 const store = useAppStore()
 const list = ref([
-  { title: '主题切换', key: 'theme' },
-  { title: '国际化', key: 'i18n' },
-  { title: 'rem移动端适配方案', key: 'rem' },
-  { title: 'axios二次封装', key: 'axios' },
-  { title: 'pinia状态管理', key: 'pinia' }
+  { title: 'home.title1', key: 'theme' },
+  { title: 'home.title2', key: 'i18n' },
+  { title: 'home.title3', key: 'rem' },
+  { title: 'home.title4', key: 'axios' },
+  { title: 'home.title5', key: 'pinia' }
 ])
 
 function handleItemClick(item: any) {
-  console.log('啦啦啦啦', item)
   switch (item.key) {
     case 'theme':
       store.changeTheme()
@@ -52,7 +50,7 @@ function handleItemClick(item: any) {
 }
 
 function handleOpen() {
-  Dialog({ message: '提示' })
+  Dialog({ message: t('home.reminder') })
 }
 </script>
 

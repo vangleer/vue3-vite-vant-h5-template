@@ -1,5 +1,5 @@
 <template>
-  <NavBar title="登录" />
+  <NavBar :title="t('login')" />
   <div class="t-page">
     <div class="t-logo-box">
       <div class="t-logo">
@@ -11,28 +11,29 @@
       <div class="t-form-item">
         <div class="t-form-label">
           <van-icon class="t-form-label-icon" name="user-o"></van-icon>
-          <span>用户名</span>
+          <span>{{ t('username') }}</span>
         </div>
-        <input v-model="user.username" placeholder="请输入用户名" />
+        <input v-model="user.username" :placeholder="t('pleaseInput') + t('username')" />
       </div>
       <div class="t-form-item">
         <div class="t-form-label">
           <SvgIcon class="t-form-label-icon" name="password" color="var(--van-text-color)" />
-          <span>密码</span>
+          <span>{{ t('password') }}</span>
         </div>
-        <input v-model="user.password" placeholder="请输入密码" />
+        <input v-model="user.password" :placeholder="t('pleaseInput') + t('password')" />
       </div>
       <div class="t-tip">
-        <span @click="handleOpt('forgot')">忘记密码/解绑</span>
-        <span @click="handleOpt('register')">注册</span>
+        <span @click="handleOpt('forgot')">{{ t('forgotPassword') }}</span>
+        <span @click="handleOpt('register')">{{ t('register') }}</span>
       </div>
     </div>
-    <van-button type="primary" round block @click="handleLogin">登录</van-button>
+    <van-button type="primary" round block @click="handleLogin">{{ t('login') }}</van-button>
   </div>
 </template>
 
 <script setup lang="ts">
 import { reactive } from 'vue'
+import { t } from '/@/plugins/i18n'
 import { Toast } from 'vant'
 import SvgIcon from '/@/components/SvgIcon.vue'
 import NavBar from '/@/layout/NavBar.vue'
@@ -46,18 +47,20 @@ const user = reactive({
 })
 
 function handleOpt(type: string) {
-  Toast(type === 'forgot' ? '忘记密码/解绑' : '注册')
+  Toast(type === 'forgot' ? t('forgotPassword') : t('register'))
 }
 
 async function handleLogin() {
-  if (!user.username.trim()) return Toast('请输入用户名！')
-  if (!user.password.trim()) return Toast('请输入密码！')
+  if (!user.username.trim()) return Toast(`${t('pleaseInput')}${t('username')}！`)
+  if (!user.password.trim()) return Toast(`${t('pleaseInput')}${t('password')}！`)
 
-  Toast('登录成功')
+  Toast(`${t('login')}${t('success')}！`)
 
   const token = 'T-APP-TOKEN'
   setToken(token)
   router.replace('/')
+  user.username = ''
+  user.password = ''
 }
 </script>
 

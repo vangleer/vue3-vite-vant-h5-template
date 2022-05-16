@@ -1,6 +1,6 @@
 <template>
   <div class="t-layout">
-    <NavBar :title="store.title" />
+    <NavBar :title="t(store.title as string)" />
     <div class="t-main">
       <router-view v-slot="{ Component }">
         <keep-alive>
@@ -14,6 +14,7 @@
 
 <script setup lang="ts">
 import NavBar from './NavBar.vue'
+import { t } from '/@/plugins/i18n'
 import Tabbar from './Tabbar.vue'
 import { useAppStore } from '/@/store'
 

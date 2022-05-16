@@ -6,12 +6,13 @@ import Category from '/@/views/tabbar/Category.vue'
 import User from '/@/views/tabbar/User.vue'
 import { useAppStore } from '/@/store'
 import { getToken } from '/@/utils/auth'
+import { t } from '/@/plugins/i18n'
 export const tabbar: Array<RouteRecordRaw> = [
   {
     path: '/home',
     component: Home,
     meta: {
-      title: '首页',
+      title: 'home.title',
       icon: 'home-o'
     }
   },
@@ -19,7 +20,7 @@ export const tabbar: Array<RouteRecordRaw> = [
     path: '/category',
     component: Category,
     meta: {
-      title: '分类',
+      title: 'category.title',
       icon: 'qr'
     }
   },
@@ -27,7 +28,7 @@ export const tabbar: Array<RouteRecordRaw> = [
     path: '/user',
     component: User,
     meta: {
-      title: '我的',
+      title: 'user.title',
       icon: 'user-o'
     }
   }
@@ -54,13 +55,17 @@ const router = createRouter({
 const whiteList = ['/login']
 
 router.beforeEach((to, from, next) => {
+  const title = to.meta.title as string || 'Vite App'
+  document.title = t(title)
+  const token = getToken()
   if (to.path === '/login' || whiteList.includes(to.path)) {
-    next()
+    if (token) {
+      next('/')
+    } else {
+      next()
+    }
   } else {
-    const title = (to.meta.title as string) || 'Vite App'
-    const token = getToken()
     const store = useAppStore()
-    document.title = title
     if (!token) {
       store.setState({ title })
       return next('/login')

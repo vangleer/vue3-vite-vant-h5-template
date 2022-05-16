@@ -1,7 +1,7 @@
 import { App } from 'vue'
 import { createI18n } from 'vue-i18n'
 import { Locale } from 'vant'
-
+import { getConfig } from '/@/config'
 import enLocale from 'vant/es/locale/lang/en-US'
 import zhLocale from 'vant/es/locale/lang/zh-CN'
 import zhCN from '../config/locales/zh-CN'
@@ -16,7 +16,7 @@ const messages = {
 
 export const i18n = createI18n({
   legacy: false,
-  locale: 'zh',
+  locale: getConfig().locale,
   fallbackLocale: 'en',
   messages
 })
