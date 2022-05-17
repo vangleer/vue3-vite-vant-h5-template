@@ -8,14 +8,25 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Sync to Gitee
-        uses: wearerequired/git-mirror-action@master
-        env:
-          # 在 Settings->Secrets 配置 GITEE_RSA_PRIVATE_KEY
-          SSH_PRIVATE_KEY: ${{ secrets.GITEE_RSA_PRIVATE_KEY }}
-          SSH_KNOWN_HOSTS: ${{ secrets.SSH_KNOWN_HOSTS }}
+      # - name: Sync to Gitee
+      #   uses: wearerequired/git-mirror-action@master
+      #   env:
+      #     # 在 Settings->Secrets 配置 GITEE_RSA_PRIVATE_KEY
+      #     SSH_PRIVATE_KEY: ${{ secrets.GITEE_RSA_PRIVATE_KEY }}
+      #     SSH_KNOWN_HOSTS: ${{ secrets.SSH_KNOWN_HOSTS }}
+      #   with:
+      #     # GitHub 源仓库地址
+      #     source-repo: git@github.com:java0088/vue3-vite-vant-h5-template.git
+      #     # Gitee 目标仓库地址
+      #     destination-repo: git@gitee.com:coderhwt/vue3-vite-vant-h5-template.git
+
+      - name: Mirror the Github organization repos to Gitee.
+        uses: Yikun/hub-mirror-action@master
         with:
-          # GitHub 源仓库地址
-          source-repo: git@github.com:java0088/vue3-vite-vant-h5-template.git
-          # Gitee 目标仓库地址
-          destination-repo: git@gitee.com:coderhwt/vue3-vite-vant-h5-template.git
+          src: 'github/java0088'
+          dst: 'gitee/huangwantong'
+          dst_key: ${{ secrets.GITEE_RSA_PRIVATE_KEY }}
+          dst_token: ${{ secrets.GITEE_TOKEN }}
+          static_list: 'vue3-vite-vant-h5-template'
+          force_update: true
+          debug: true
