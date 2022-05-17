@@ -48,3 +48,4 @@ jobs:
           folder: dist # The folder the action should deploy.
 
 ```
+- 如果不是自己提交的话需要
