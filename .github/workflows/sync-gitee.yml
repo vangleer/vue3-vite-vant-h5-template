@@ -13,6 +13,7 @@ jobs:
         env:
           # 在 Settings->Secrets 配置 GITEE_RSA_PRIVATE_KEY
           SSH_PRIVATE_KEY: ${{ secrets.GITEE_RSA_PRIVATE_KEY }}
+          SSH_KNOWN_HOSTS: ${{ secrets.SSH_KNOWN_HOSTS }}
         with:
           # GitHub 源仓库地址
           source-repo: git@github.com:java0088/vue3-vite-vant-h5-template.git
