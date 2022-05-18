@@ -25,7 +25,7 @@ jobs:
         with:
           src: 'github/java0088'
           dst: 'gitee/huangwantong'
-          dst_key: ${{ secrets..GITEE_PRIVATE_KEY }}
+          dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
           dst_token: ${{ secrets.GITEE_TOKEN }}
           static_list: 'vue3-vite-vant-h5-template'
           force_update: true
