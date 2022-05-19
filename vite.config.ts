@@ -18,7 +18,8 @@ const alias: Record<string, string> = {
 // https://vitejs.dev/config/
 export default ({ mode }) => defineConfig({
   resolve: { alias },
-  base: mode === 'production' ? '/vue3-vite-vant-h5-template/' : '/',
+  // base: mode === 'production' ? '/vue3-vite-vant-h5-template/' : '/',
+  base: mode === 'production' ? './' : '/',
   plugins: [
     vue(),
     styleImport({
