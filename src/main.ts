@@ -15,7 +15,7 @@ useI18n(app)
 setupVant(app)
 setupStore(app)
 app.use(router)
-console.log('测试')
+
 router.isReady().then(() => {
   app.mount('#app')
 })
