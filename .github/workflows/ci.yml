@@ -1,24 +1,24 @@
-# name: Vue3 Vite Vant H5 Template 
-# on:
-#   push:
-#     branches:
-#       - main
-# jobs:
-#   build-and-deploy:
-#     concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Checkout 🛎️
-#         uses: actions/checkout@v3
+name: Vue3 Vite Vant H5 Template 
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build-and-deploy:
+    concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
 
-#       - name: Install and Build 🔧 # 安装依赖、打包，如果提前已打包好无需这一步
-#         run: |
-#           npm install
-#           npm run build
-#           cp images/ -r dist/assets
+      - name: Install and Build 🔧 # 安装依赖、打包，如果提前已打包好无需这一步
+        run: |
+          npm install
+          npm run build
+          cp images/ -r dist/assets
 
-#       - name: Deploy 🚀
-#         uses: JamesIves/github-pages-deploy-action@v4.3.3
-#         with:
-#           branch: gh-pages # The branch the action should deploy to.
-#           folder: dist # The folder the action should deploy.
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: dist # The folder the action should deploy.
