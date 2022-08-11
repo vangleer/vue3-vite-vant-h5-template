@@ -15,7 +15,7 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.GITEE_PRIVATE_KEY }}
         with:
           # GitHub 源仓库地址
-          source-repo: git@github.com:java0088/vue3-vite-vant-h5-template.git
+          source-repo: git@github.com:vangleer/vue3-vite-vant-h5-template.git
           # Gitee 目标仓库地址
           destination-repo: git@gitee.com:huangwantong/vue3-vite-vant-h5-template.git
 
